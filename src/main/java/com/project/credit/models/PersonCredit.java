@@ -1,36 +1,36 @@
-package com.project.credit.models;
+	package com.project.credit.models;
 
 import java.math.BigDecimal;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document("credits")
-public class Credit {
+@Document("personalcredits")
+public class PersonCredit {
 	
 	@Id
 	private String id;
 	private BigDecimal capital;
 	private BigDecimal quote;
-	private String lastQuote;
+	private int lastQuote;
 	private int numQuotes;
 	
-	private Client client;
-	private BigDecimal amount;
+	private PersonClient personClient;
+	private String currency;
 	
-	public Credit() {
+	public PersonCredit() {
 		
 	}
 	
-	public Credit(String id, BigDecimal capital, BigDecimal quote, String lastQuote, int numQuotes,
-			Client client, BigDecimal amount) {
+	public PersonCredit(String id, BigDecimal capital, BigDecimal quote, int lastQuote, int numQuotes,
+			PersonClient personClient, String currency) {
 		this.id = id;
 		this.capital = capital;
 		this.quote = quote;
 		this.lastQuote = lastQuote;
 		this.numQuotes = numQuotes;
-		this.client = client;
-		this.amount = amount;
+		this.personClient = personClient;
+		this.currency = currency;
 	}
 
 	public String getId() {
@@ -51,10 +51,10 @@ public class Credit {
 	public void setQuote(BigDecimal quote) {
 		this.quote = quote;
 	}
-	public String getLastQuote() {
+	public int getLastQuote() {
 		return lastQuote;
 	}
-	public void setLastQuote(String lastQuote) {
+	public void setLastQuote(int lastQuote) {
 		this.lastQuote = lastQuote;
 	}
 	public int getNumQuotes() {
@@ -63,19 +63,18 @@ public class Credit {
 	public void setNumQuotes(int numQuotes) {
 		this.numQuotes = numQuotes;
 	}
-	public Client getClient() {
-		return client;
+	public PersonClient getPersonClient() {
+		return personClient;
 	}
-	public void setClient(Client client) {
-		this.client = client;
+	public void setPersonClient(PersonClient personClient) {
+		this.personClient = personClient;
 	}
-	public BigDecimal getAmount() {
-		return amount;
+	public String getCurrency() {
+		return currency;
 	}
-	public void setAmount(BigDecimal amount) {
-		this.amount = amount;
+	public void setCurrency(String currency) {
+		this.currency = currency;
 	}
 	
-	
-	
+
 }

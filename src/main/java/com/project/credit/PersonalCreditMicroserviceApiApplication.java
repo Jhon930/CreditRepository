@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CreditMicroserviceApiApplication {
+public class PersonalCreditMicroserviceApiApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CreditMicroserviceApiApplication.class, args);
+		SpringApplication.run(PersonalCreditMicroserviceApiApplication.class, args);
 	}
 
 }
